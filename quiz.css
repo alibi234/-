@@ -1,0 +1,494 @@
+.nav
+{
+    background-color:rgba(0,0,0,.15);
+    z-index: 9;
+    padding-left: 50px;
+    padding-right: 50px;
+    display:flex;
+    box-shadow: 0px 3px 65px 0px rgba(0,0,0,.15);
+}
+.nav_top
+{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+}
+.logo
+{
+    float:left;
+    width: 50%;
+}
+.logo img
+{
+    padding: 8px;
+    width:30%;
+    margin-left:10%;
+}
+.nav_side
+{
+    float:right;
+    width:45%;
+    margin-top: 20px;
+}
+.nav_side a
+{
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left:22px;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-left: 15px;
+    color: rgb(37, 0, 19);
+    font-weight: bold;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    
+}
+.nav_side a:hover
+{
+    color: rgb(253, 0, 84);
+    transition: all 1s ease;
+}
+
+
+/*--------------------------------------------QUIZ----------------------------------------*/
+
+/* Ваш текущий CSS */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Настройте высоту по вашему усмотрению */
+    text-align: center;
+  }
+  
+  .quiz-container h1 {
+    margin-bottom: 20px;
+  }
+  
+  .quiz-container button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color:rgba(214, 127, 172, 0.5); /* Цвет кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .quiz-container button:hover {
+    background-color:rgba(57, 5, 32, 0.5); /* Цвет кнопки при наведении */
+  }
+  
+ 
+  
+/* Стили для модального окна */
+/* Общие стили */
+body {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Стили для модального окна */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #f7c1e0;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    animation-name: modalAnim;
+    animation-duration: 0.5s;
+  }
+  
+  .close {
+    color: #a10053;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close:hover {
+    color: #4a001f;
+  }
+  
+  h2 {
+    color: #4a001f;
+  }
+  
+  p {
+    color: #4a001f;
+  }
+  
+  /* Анимация появления модального окна */
+  @keyframes modalAnim {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Стили для кнопок */
+  .btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .btn-container button {
+    margin: 0 10px;
+    background-color: #a10053;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+  }
+  
+  .btn-container button:hover {
+    background-color: #4a001f;
+  }
+  
+  /* CSS */
+
+/* Update font-family */
+body {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  }
+  
+  /* Update modal container */
+  .new-modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  
+  /* Show modal */
+  .new-modal.show {
+    left: 0;
+  }
+  
+  /* Restyled modal content */
+  .new-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 40px;
+    background-color:#f7c1e0;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: #333;
+  }
+  
+  /* Restyled close button */
+  .close {
+    color: #4a001f;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close:hover {
+    color: #a10053;
+  }
+  
+  /* Restyled next button */
+  #nextButton {
+    padding: 12px 24px;
+    background-color: #a10053;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  #nextButton:hover {
+    background-color: #4a001f;
+    transform: scale(1.05);
+  }
+
+  /* Убираем маркеры (круги) перед вариантами ответов */
+#options {
+    list-style: none; /* Это свойство убирает маркеры списка */
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  
+  #options li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: #333;
+  }
+  
+  /* Стили для радиокнопок */
+  #options input[type="radio"] {
+    margin-right: 10px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4a001f;
+    border-radius: 50%;
+    outline: none;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Выбранная радиокнопка */
+  #options input[type="radio"]:checked {
+    border-color: #a10053;
+  }
+  
+  /* Эффект при наведении на радиокнопку */
+  #options input[type="radio"]:hover {
+    border-color: #a10053;
+  }
+  
+  /* Пользовательский индикатор для радиокнопок */
+  #options input[type="radio"]::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Индикатор для выбранной радиокнопки */
+  #options input[type="radio"]:checked::before {
+    background-color: #a10053;
+  }
+  
+  /* Эффект при наведении на индикатор радиокнопки */
+  #options input[type="radio"]:hover::before {
+    background-color: #a10053;
+  }
+  
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #f7c1e0;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Стили для вопросов и ответов */
+  .questxt {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .option {
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .option:hover {
+    background-color:  #a10053;
+  }
+  
+  .correct {
+    background-color: #8bc34a;
+    color: #fff;
+  }
+  
+  .incorrect {
+    background-color: #ff5722;
+    color: #fff;
+  }
+  
+  .btn {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #a10053;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .btn:hover {
+    background-color: #a10053;
+  }
+  
+/* Применение шрифта к элементам */
+body {
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  }
+  
+/*--------------------------------------------FOOTER----------------------------------------*/
+footer
+{
+    background-color: black;
+    padding:50px;
+}
+footer .pages
+{
+    text-align: center;
+}
+footer .pages h3
+{
+    color: rgb(255, 226, 243);
+    font-size: 20px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif; 
+    padding: 5px;
+    font-weight: bold;
+}
+footer .pages a
+{
+    text-decoration: none;
+    margin:10px;
+    color: rgba(255, 226, 243, 0.808);
+    font-size: 15px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif; 
+}
+footer .pages a:hover
+{
+    color:white;
+}
+footer .doc
+{
+    text-align: center;
+}
+footer .doc h3
+{
+    color: rgb(255, 226, 243);
+    font-size: 20px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    padding: 5px;
+    font-weight: bold;
+}
+footer .doc a
+{
+    text-decoration: none;
+    margin:10px;
+    color: rgba(255, 226, 243, 0.808);
+    font-size: 15px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+footer .doc a:hover
+{
+    color:white;
+}
+footer .social
+{
+    text-align: center;
+}
+footer .social h3
+{
+    color: rgb(255, 226, 243);
+    font-size: 20px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    padding: 5px;
+    font-weight: bold;
+}
+footer .contact
+{
+    text-align: center;
+}
+footer .contact h3
+{
+    color: rgb(255, 226, 243);
+    font-size: 20px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    padding: 5px;
+    font-weight: bold;
+}
+footer .social a
+{
+    font-size: 30px;
+    text-decoration: none;;
+    color:rgba(247, 193, 224, 0.904);
+    margin:10px;
+}
+footer .social a:hover
+{
+    color:white;
+}
+footer .contact a
+{
+    font-size: 30px;
+    text-decoration: none;;
+    color:rgba(247, 193, 224, 0.904);
+    margin:10px;
+}
+footer .contact a:hover
+{
+    color:white;
+}
+footer p
+{
+    color:rgba(247, 178, 217, 0.726);
+}
+
+/* Общий фон и цвет текста */
+body {
+    background-color: #1a1a1a; /* Цвет фона */
+    color: #ffffff; /* Цвет текста */
+}
+
+/* Стили для обычных кнопок */
+.nav_side a {
+    /* Ваши текущие стили */
+    /* ... */
+    color: #ffffff; /* Цвет текста кнопок */
+    border-color: #ffffff; /* Цвет рамки кнопок */
+}
